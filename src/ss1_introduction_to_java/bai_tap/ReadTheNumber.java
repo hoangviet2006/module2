@@ -7,11 +7,6 @@ public class ReadTheNumber {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Nhập vào một số có một chữ số: ");
         int number = scanner.nextInt();
-        /*int DonVi = scanner.nextByte();
-        DonVi = DonVi % 10;
-        int HangChuc = scanner.nextByte();
-        HangChuc = HangChuc/10;
-        Math.floor(HangChuc);*/
         if (number < 10) {
             switch (number) {
                 case 1:
