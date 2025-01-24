@@ -1,14 +1,13 @@
 package student.service;
 
-import student.model.Student;
-import student.model.Teacher;
+import student.model.Teacher1;
 
 public interface ITeacherService {
-    Teacher[] getAll();
+    Teacher1[] getAll();
 
-    void addTeacher(Teacher teacher);
+    void addTeacher(Teacher1 teacher);
 
     boolean delete(int id);
 
-    Teacher[] search(String name);
+    Teacher1[] search(String name);
 }

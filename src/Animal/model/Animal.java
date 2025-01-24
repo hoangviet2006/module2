@@ -1,17 +1,15 @@
-package student.model;
+package Animal.model;
 
-public class Student {
+public class Animal {
     private int id;
     private String name;
 
-    public Student() {
+
+    public Animal() {
     }
 
-    public Student(int id, String name) {
+    public Animal(int id, String name) {
         this.id = id;
-        this.name = name;
-    }
-    public Student(String name){
         this.name = name;
     }
 
@@ -33,7 +31,7 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student{" +
+        return "Animal{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 '}';

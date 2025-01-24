@@ -3,6 +3,8 @@ package student.service.impl;
 import student.model.Student;
 import student.service.IStudentService;
 
+import java.util.Scanner;
+
 public class StudentService implements IStudentService {
     private static Student[] students = new Student[100];
 
@@ -49,6 +51,17 @@ public class StudentService implements IStudentService {
         }
         return listSearch;
 
+    }
+
+    @Override
+    public boolean editStudent(int id,Student student) {
+        for (int i = 0; i < students.length; i++) {
+            if (students[i] != null && students[i].getId() == id) {
+                students[i].setName(student.getName());
+                return true;
+            }
+        }
+        return false;
     }
 
 }

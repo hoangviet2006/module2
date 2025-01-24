@@ -15,7 +15,7 @@ public class StudentView {
         }
     }
 
-    public static Student addStudent() {
+    public static Student inputDataForStudent() {
         System.out.println("-----Nhập id------");
         int id = Integer.parseInt(scanner.nextLine());
         System.out.println("-------nhập tên------");
@@ -23,6 +23,7 @@ public class StudentView {
         Student students1 = new Student(id, name);
         return students1;
     }
+
 
     public static int inputId() {
         System.out.println("-----Nhập id------");

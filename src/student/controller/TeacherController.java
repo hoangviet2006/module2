@@ -1,10 +1,7 @@
 package student.controller;
 
-import student.model.Student;
-import student.model.Teacher;
-import student.service.impl.StudentService;
+import student.model.Teacher1;
 import student.service.impl.TeacherService;
-import student.view.StudentView;
 import student.view.TeacherView;
 
 import java.util.Scanner;
@@ -30,11 +27,11 @@ public class TeacherController {
             int count = Integer.parseInt(scanner.nextLine());
             switch (count) {
                 case show:
-                    Teacher[] teachers = teacherService.getAll();
+                    Teacher1[] teachers = teacherService.getAll();
                     TeacherView.displayMenu(teachers);
                     break;
                 case add:
-                    Teacher teacher = TeacherView.addTeacher();
+                    Teacher1 teacher = TeacherView.inputDataForTeacher();
                     teacherService.addTeacher(teacher);
                     break;
                 case delete:
@@ -48,7 +45,7 @@ public class TeacherController {
                     break;
                 case search:
                     String searchTeacher = TeacherView.searchTeach();
-                    Teacher[] teacherList = teacherService.search(searchTeacher);
+                    Teacher1[] teacherList = teacherService.search(searchTeacher);
                     TeacherView.displayMenu(teacherList);
                     break;
                 case back:

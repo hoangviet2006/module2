@@ -9,6 +9,7 @@ public interface IStudentService {
 
     boolean delete(int id);
 
-    Student[] search(String id);
+    Student[] search(String name);
 
+    boolean editStudent( int id, Student name);
 }

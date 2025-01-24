@@ -1,17 +1,14 @@
-package student.model;
+package MeanOfTransportation.model;
 
-public class Student {
+public class MeanOfTransportation {
     private int id;
     private String name;
 
-    public Student() {
+    public MeanOfTransportation() {
     }
 
-    public Student(int id, String name) {
+    public MeanOfTransportation(int id, String name) {
         this.id = id;
-        this.name = name;
-    }
-    public Student(String name){
         this.name = name;
     }
 
@@ -33,7 +30,7 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student{" +
+        return "MeanOfTransportation{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 '}';

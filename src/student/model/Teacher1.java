@@ -1,13 +1,13 @@
 package student.model;
 
-public class Teacher {
-   private String name ;
-   private   int id;
+public class Teacher1 {
+    private String name;
+    private int id;
 
-    public Teacher() {
+    public Teacher1() {
     }
 
-    public Teacher(String name, int id) {
+    public Teacher1(String name, int id) {
         this.name = name;
         this.id = id;
     }
