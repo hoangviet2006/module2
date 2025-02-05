@@ -17,6 +17,8 @@ public class OtoView {
                 break;
             } catch (NumberFormatException e) {
                 System.out.println("vui lòng nhập lại biển kiểm soát");
+            }catch (Exception e){
+                System.out.println("lỗi khác");
             }
         }
 
@@ -28,6 +30,8 @@ public class OtoView {
                 break;
             }catch (IllegalArgumentException e){
                 System.out.println("Vui lòng nhập lại hãng sản xuất");
+            }catch (Exception e){
+                System.out.println("lỗi khác");
             }
         }
 
@@ -39,6 +43,8 @@ public class OtoView {
                 break;
             }catch (NumberFormatException e){
                 System.out.println("Vui lòng nhập lại năm sản xuất phù hợp");
+            }catch (Exception e){
+                System.out.println("lỗi khác");
             }
         }
 
@@ -50,6 +56,8 @@ public class OtoView {
                 break;
             }catch (IllegalArgumentException e){
                 System.out.println("Vui lòng nhập tên chủ sở hữu phù hợp");
+            }catch (Exception e){
+                System.out.println("lỗi khác");
             }
         }
 
@@ -61,6 +69,8 @@ public class OtoView {
                 break;
             }catch (NumberFormatException e){
                 System.out.println("vui lòng nhập lại số chổ ngồi của xe  phù hợp");
+            }catch (Exception e){
+                System.out.println("lỗi khác");
             }
         }
 
@@ -72,6 +82,8 @@ public class OtoView {
                 break;
             }catch (IllegalArgumentException e){
                 System.out.println("vui lòng nhập kiểu xe phù hợp(vd: xe dịch vụ)");
+            }catch (Exception e){
+                System.out.println("lỗi khác");
             }
         }
 
@@ -88,6 +100,8 @@ public class OtoView {
                 break;
             } catch (NumberFormatException e) {
                 System.out.println("vui lòng nhập lại biển kiểm soát");
+            }catch (Exception e){
+                System.out.println("lỗi khác");
             }
         }
         return licensePlate;
@@ -102,6 +116,8 @@ public class OtoView {
                 break;
             } catch (NumberFormatException e) {
                 System.out.println("vui lòng nhập lại biển kiểm soát");
+            }catch (Exception e){
+                System.out.println("lỗi khác");
             }
         }
 
@@ -114,6 +130,8 @@ public class OtoView {
                 break;
             }catch (IllegalArgumentException e){
                 System.out.println("Vui lòng nhập lại hãng sản xuất");
+            }catch (Exception e){
+                System.out.println("lỗi khác");
             }
         }
 
@@ -126,6 +144,8 @@ public class OtoView {
                 break;
             }catch (NumberFormatException e){
                 System.out.println("Vui lòng nhập lại năm sản xuất phù hợp");
+            }catch (Exception e){
+                System.out.println("lỗi khác");
             }
         }
 
@@ -138,6 +158,8 @@ public class OtoView {
                 break;
             }catch (IllegalArgumentException e){
                 System.out.println("Vui lòng nhập tên chủ sở hữu phù hợp");
+            }catch (Exception e){
+                System.out.println("lỗi khác");
             }
         }
 
@@ -150,6 +172,8 @@ public class OtoView {
                 break;
             }catch (NumberFormatException e){
                 System.out.println("vui lòng nhập lại số chổ ngồi của xe  phù hợp");
+            }catch (Exception e){
+                System.out.println("lỗi khác");
             }
         }
         System.out.println("Nhập kiểu xe mới của xe: ");
@@ -160,6 +184,8 @@ public class OtoView {
                 break;
             }catch (IllegalArgumentException e){
                 System.out.println("vui lòng nhập kiểu xe phù hợp(vd: xe dịch vụ)");
+            }catch (Exception e){
+                System.out.println("lỗi khác");
             }
         }
         Oto oto = new Oto(licensePlate, Manufacturer, YearOfManufacture, Owner, numberOfSeats, VehicleType);
@@ -175,6 +201,8 @@ public class OtoView {
                 break;
             } catch (NumberFormatException e) {
                 System.out.println("vui lòng nhập lại biển kiểm soát");
+            }catch (Exception e){
+                System.out.println("lỗi khác");
             }
         }
         return licensePlate;

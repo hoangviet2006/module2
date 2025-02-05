@@ -12,7 +12,6 @@ public class Main {
         MotorbikeController motorbikeController = new MotorbikeController();
         OtoController otoController = new OtoController();
         TrunkController trunkController = new TrunkController();
-
         while (true) {
             System.out.println("--------Chọn Chức Năng-----------" +
                     "\n 1. Quản Lý Motorbike" +
@@ -31,9 +30,9 @@ public class Main {
                     System.out.println("lỗi khác");
                 }
             }
-            if (count < 0 || count > 4){
+            if (count <= 0 || count > 4) {
                 System.out.println("vui lòng chọn lại chức năng");
-            }else {
+            } else {
                 switch (count) {
                     case 1:
                         motorbikeController.DisplayMotorbike();
@@ -43,12 +42,11 @@ public class Main {
                         break;
                     case 3:
                         trunkController.DisplayMotorbike();
+                        break;
                     case 4:
                         System.exit(0);
                 }
             }
-
-
         }
     }
 }

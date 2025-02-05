@@ -22,7 +22,7 @@ public class MotorbikeService implements IMotorbike {
     @Override
     public ArrayList<Motorbike> getMotorbike() {
         for (int i = 0; i < motorbikes.size(); i++) {
-            if (motorbikes.get(i)!=null){
+            if (motorbikes.get(i) != null) {
                 Collections.sort(motorbikes);
                 System.out.println(motorbikes.get(i));
             }
@@ -33,10 +33,10 @@ public class MotorbikeService implements IMotorbike {
     @Override
     public boolean deleteMotorbike(int LicensePlate) {
         for (int i = 0; i < motorbikes.size(); i++) {
-           if (motorbikes.get(i).getLicensePlate()==LicensePlate){
-               motorbikes.remove(i);
-               return true;
-           }
+            if (motorbikes.get(i).getLicensePlate() == LicensePlate) {
+                motorbikes.remove(i);
+                return true;
+            }
         }
         return false;
     }
@@ -45,8 +45,8 @@ public class MotorbikeService implements IMotorbike {
     public ArrayList<Motorbike> searchMotorbike(int LicensePlate) {
         ArrayList<Motorbike> newMotorbike = new ArrayList<>();
         for (int i = 0; i < motorbikes.size(); i++) {
-            if (motorbikes.get(i).getLicensePlate()==LicensePlate){
-              newMotorbike.add(motorbikes.get(i));
+            if (motorbikes.get(i).getLicensePlate() == LicensePlate) {
+                newMotorbike.add(motorbikes.get(i));
             }
         }
         return newMotorbike;
@@ -55,17 +55,17 @@ public class MotorbikeService implements IMotorbike {
     @Override
     public boolean edit(int LicensePlate, Motorbike motorbike) {
         for (int i = 0; i < motorbikes.size(); i++) {
-            if (motorbikes.get(i).getLicensePlate()==LicensePlate){
-                motorbikes.set(i,motorbike);
+            if (motorbikes.get(i).getLicensePlate() == LicensePlate) {
+                motorbikes.set(i, motorbike);
                 return true;
             }
         }
         return false;
     }
 
-    public  boolean checkLicensePlate(int plate){
+    public boolean checkLicensePlate(int plate) {
         for (int i = 0; i < motorbikes.size(); i++) {
-            if (motorbikes.get(i).getLicensePlate()==plate){
+            if (motorbikes.get(i).getLicensePlate() == plate) {
                 return true;
             }
         }

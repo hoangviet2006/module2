@@ -29,6 +29,10 @@ public class Animal {
         this.name = name;
     }
 
+    public String getInforToFile() {
+        return this.getId() + "," + this.getName();
+    }
+
     @Override
     public String toString() {
         return "Animal{" +

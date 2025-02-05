@@ -6,39 +6,38 @@ import java.util.SortedMap;
 public class ExceptionTamGiac {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int a = 0;
-        int b = 0;
-        int c = 0;
-        boolean check = false;
-        while (!check) {
+        int a;
+        int b;
+        int c;
+        System.out.println("Nhập vào cạnh a");
+        while (true) {
             try {
-                System.out.println("nhập vào cạnh a: ");
                 a = Integer.parseInt(scanner.nextLine());
                 break;
-            } catch (Exception e) {
-                check = false;
+            } catch (NumberFormatException numberFormatException) {
+                System.out.println(" không phải là số, nhập lại cạnh a");
             }
         }
-        while (!check) {
+        System.out.println("Nhập vào cạnh b");
+        while (true) {
             try {
-                System.out.println("nhập vào cạnh b: ");
                 b = Integer.parseInt(scanner.nextLine());
                 break;
-            } catch (Exception e) {
-                check = false;
+            } catch (NumberFormatException numberFormatException) {
+                System.out.println("Bạn vừa nhập không phải là số,nhập lại cạnh b");
             }
         }
-        while (!check) {
+        System.out.println("Nhập vào cạnh c");
+        while (true) {
             try {
-                System.out.println("nhập vào cạnh c: ");
                 c = Integer.parseInt(scanner.nextLine());
                 break;
-            } catch (Exception e) {
-                check = false;
+            }catch (NumberFormatException numberFormatException){
+                System.out.println("Bạn vừa nhập không phải là số,nhập lại cạnh c");
             }
         }
-        if ((a + b) > c && (a + c) > b && (b + c) > a) {
-            System.out.println("Đây là một tam giác");
+        if (a + b > c ||a + c > b ||b + c > a){
+            System.out.println("đây là một tam giác");
         }else {
             System.out.println("Đây không phải một tam giác");
         }

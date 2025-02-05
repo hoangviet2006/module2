@@ -5,6 +5,7 @@ import Animal.service.AnimalService;
 import Animal.view.AnimalView;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class AnimalController {
@@ -13,7 +14,6 @@ public class AnimalController {
 
 
     public void displayMenu() {
-
         while (true) {
             System.out.println("-----chọn chức năng------" +
                     "\n 1.Hiển thị" +
@@ -25,11 +25,14 @@ public class AnimalController {
             int count = Integer.parseInt(scanner.nextLine());
             switch (count) {
                 case 1:
-                    animalService.getAll();
+                    List<Animal> animalList = animalService.getAll();
+                    for (int i = 0; i < animalList.size(); i++) {
+                        System.out.println(animalList.get(i));
+                    }
                     break;
                 case 2:
                     Animal animal = AnimalView.inputAnimal();
-                    animalService.addStudent(animal);
+                    animalService.addAnimal(animal);
                     break;
                 case 3:
                     String name = AnimalView.inputName();
@@ -42,8 +45,8 @@ public class AnimalController {
                     break;
                 case 4:
                     String nameSearch = AnimalView.inputName();
-                    ArrayList<Animal> list = animalService.search(nameSearch);
-                    AnimalView.searchAnimal(list);
+                    List<Animal> list = animalService.search(nameSearch);
+                    AnimalView.displaySearchAnimals(list);
                     break;
                 case 5:
                     break;

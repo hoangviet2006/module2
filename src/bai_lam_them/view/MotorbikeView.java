@@ -10,63 +10,70 @@ public class MotorbikeView {
 
     public static Motorbike inputMotorbike() {
         int licensePlate = 0;
-        boolean check = false;
         System.out.println("Nhập biển kiểm soát");
-        while (!check) {
+        while (true) {
             try {
                 licensePlate = Integer.parseInt(scanner.nextLine());
-                check = true;
-            } catch (Exception e) {
+                break;
+            } catch (NumberFormatException e) {
                 System.out.println("Nhập lại biển kiểm soát ");
-                check = false;
+            } catch (Exception e) {
+                System.out.println("lỗi khác");
             }
         }
-        boolean check1 = false;
+
+
         System.out.println("Nhập hãng sản xuất");
         String Manufacturer = "";
-        while (!check1) {
+        while (true) {
             try {
                 Manufacturer = scanner.nextLine();
-                check1 = true;
-            } catch (Exception e) {
+                break;
+            } catch (IllegalArgumentException e) {
                 System.out.println("Nhập lại hãng sản xuất");
-                check1 = false;
+            } catch (Exception e) {
+                System.out.println("lỗi khác");
             }
         }
-        boolean check2 = false;
+
         int YearOfManufacture = 0;
         System.out.println("Nhập năm sản xuất");
-        while (!check2) {
+        while (true) {
             try {
                 YearOfManufacture = Integer.parseInt(scanner.nextLine());
-                check2 = true;
-            } catch (Exception e) {
+                break;
+            } catch (NumberFormatException e) {
                 System.out.println("Nhập lại năm sản xuất");
-                check2 = false;
+            } catch (Exception e) {
+                System.out.println("lỗi khác");
             }
         }
+
+
         System.out.println("Nhập chủ sỡ hữu");
-        boolean check3 = false;
         String Owner = "";
-        while (!check3) {
+        while (true) {
             try {
                 Owner = scanner.nextLine();
-                check3 = true;
-            } catch (Exception e) {
+                break;
+            } catch (IllegalArgumentException e) {
                 System.out.println("Nhập lại chủ sở hữu");
-                check3 = false;
+            } catch (Exception e) {
+                System.out.println("lỗi khác");
             }
         }
+
+
         int power = 0;
-        boolean check4 = false;
         System.out.println("Nhập mã lực của xe");
-        while (!check4) {
+        while (true) {
             try {
                 power = Integer.parseInt(scanner.nextLine());
-                check4 = true;
-            } catch (Exception e) {
+                break;
+            } catch (NumberFormatException e) {
                 System.out.println("Nhập lại mã lực của xe");
-                check4 = false;
+            } catch (Exception e) {
+                System.out.println("lỗi khác");
             }
         }
         Motorbike motorbike = new Motorbike(licensePlate, Manufacturer, YearOfManufacture, Owner, power);
@@ -76,15 +83,15 @@ public class MotorbikeView {
 
     public static int InputlicensePlate() {
         int licensePlate = 0;
-        boolean check = false;
         System.out.println("Nhập biển kiểm soát");
-        while (!check) {
+        while (true) {
             try {
                 licensePlate = Integer.parseInt(scanner.nextLine());
-                check = true;
-            } catch (Exception e) {
+                break;
+            } catch (NumberFormatException e) {
                 System.out.println("Nhập lại biển kiểm soát ");
-                check = false;
+            } catch (Exception e) {
+                System.out.println("lỗi khác");
             }
         }
         return licensePlate;
@@ -93,70 +100,77 @@ public class MotorbikeView {
 
     public static Motorbike editMotorbike() {
         int licensePlate = 0;
-        boolean check = false;
         System.out.println("Nhập biển kiểm soát");
-        while (!check) {
+        while (true) {
             try {
                 licensePlate = Integer.parseInt(scanner.nextLine());
-                check = true;
-            } catch (Exception e) {
+              break;
+            } catch (NumberFormatException e) {
                 System.out.println("Nhập lại biển kiểm soát ");
-                check = false;
+            } catch (Exception e) {
+                System.out.println("lỗi khác");
             }
         }
-        boolean check1 = false;
+
+
         System.out.println("Nhập hãng sản xuất");
         String Manufacturer = "";
-        while (!check1) {
+        while (true) {
             try {
                 Manufacturer = scanner.nextLine();
-                check1 = true;
-            } catch (Exception e) {
+              break;
+            } catch (IllegalArgumentException e) {
                 System.out.println("Nhập lại hãng sản xuất");
-                check1 = false;
+
+            } catch (Exception e) {
+                System.out.println("lỗi khác");
             }
         }
-        boolean check2 = false;
+
+
         int YearOfManufacture = 0;
         System.out.println("Nhập năm sản xuất");
-        while (!check2) {
+        while (true) {
             try {
                 YearOfManufacture = Integer.parseInt(scanner.nextLine());
-                check2 = true;
-            } catch (Exception e) {
+                break;
+            } catch (NumberFormatException e) {
                 System.out.println("Nhập lại năm sản xuất");
-                check2 = false;
+            } catch (Exception e) {
+                System.out.println("lỗi khác");
             }
         }
+
+
         System.out.println("Nhập chủ sỡ hữu");
-        boolean check3 = false;
         String Owner = "";
-        while (!check3) {
+        while (true) {
             try {
                 Owner = scanner.nextLine();
-                check3 = true;
-            } catch (Exception e) {
+                break;
+            } catch (IllegalArgumentException e) {
                 System.out.println("Nhập lại chủ sở hữu");
-                check3 = false;
+            } catch (Exception e) {
+                System.out.println("lỗi khác");
             }
         }
+
+
         int power = 0;
-        boolean check4 = false;
         System.out.println("Nhập mã lực của xe");
-        while (!check4) {
+        while (true) {
             try {
                 power = Integer.parseInt(scanner.nextLine());
-                check4 = true;
-            } catch (Exception e) {
+                break;
+            } catch (NumberFormatException e) {
                 System.out.println("Nhập lại mã lực của xe");
-                check4 = false;
+            } catch (Exception e) {
+                System.out.println("lỗi khác");
             }
         }
+
         Motorbike motorbike = new Motorbike(licensePlate, Manufacturer, YearOfManufacture, Owner, power);
         return motorbike;
     }
-
-
-
 }
 

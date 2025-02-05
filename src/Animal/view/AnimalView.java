@@ -4,6 +4,7 @@ package Animal.view;
 import Animal.model.Animal;
 
 import java.util.AbstractList;
+import java.util.List;
 import java.util.Scanner;
 
 public class AnimalView {
@@ -24,7 +25,7 @@ public class AnimalView {
         return name;
     }
 
-    public static void searchAnimal(AbstractList<Animal> listAnimal) {
+    public static void displaySearchAnimals(List<Animal> listAnimal) {
         if (listAnimal.size() > 0) {
             for (int i = 0; i < listAnimal.size(); i++) {
                 System.out.println(listAnimal.get(i).toString());

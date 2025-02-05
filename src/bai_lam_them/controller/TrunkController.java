@@ -22,46 +22,62 @@ public class TrunkController {
                     "\n 5. Sửa" +
                     "\n 6. Quay lại menu chính");
             System.out.println("-------Chọn Chức Năng---------");
-            int count = Integer.parseInt(scanner.nextLine());
-            switch (count) {
-                case 1:
-                    trunkService.getTrunk();
+            int count;
+            while (true) {
+                try {
+                    count = Integer.parseInt(scanner.nextLine());
                     break;
-                case 2:
-                    Truck truck = TrunkView.inputTrunk();
-                    trunkService.addTrunk(truck);
-                    break;
-                case 3:
-                    int trunkDelete = TrunkView.inputlicensePlate();
-                    boolean check = trunkService.deleteTrunk(trunkDelete);
-                    if (check) {
-                        System.out.println("XÓA THÀNH CÔNG");
-                    } else {
-                        System.out.println("KHÔNG TÌM THẤY BIỂN KIỂM SOÁT CẦN XÓA");
-                    }
-                    break;
-                case 4:
-                    int trunkSearch = TrunkView.inputlicensePlate();
-                    ArrayList<Truck> trucks = trunkService.searchTrunk(trunkSearch);
-                    if (trucks.size() > 0) {
-                        System.out.println(trucks);
-                    } else {
-                        System.out.println("KHÔNG TÌM THẤY BIỂN KIỂM SOÁT CẦN XÓA");
-                    }
-                    break;
-                case 5:
-                    int plateEdit = TrunkView.inputLicensePlateEDit();
-                    boolean checkPlate = trunkService.checkLicensePlate(plateEdit);
-                    if (checkPlate) {
-                        Truck truckedit = TrunkView.editTrunk();
-                        trunkService.edit(plateEdit, truckedit);
-                        System.out.println("CHỈNH SỬA THÀNH CÔNG");
-                    } else {
-                        System.out.println("KHÔNG TÌM THẤY BIỂN KIỂM SOÁT CẦN CHỈNH SỬA");
-                    }
-                    break;
-                case 6:
-                    flag = false;
+                } catch (NumberFormatException e) {
+                    System.out.println("vui lòng chọn lại chức năng");
+                } catch (Exception e) {
+                    System.out.println("lỗi khác");
+                }
+            }
+            if (count <= 0 || count > 6) {
+                System.out.println("vui lòng chọn lại chức năng");
+            } else {
+                switch (count) {
+                    case 1:
+                        trunkService.getTrunk();
+                        break;
+                    case 2:
+                        Truck truck = TrunkView.inputTrunk();
+                        trunkService.addTrunk(truck);
+                        break;
+                    case 3:
+                        int trunkDelete = TrunkView.inputlicensePlate();
+                        boolean check = trunkService.deleteTrunk(trunkDelete);
+                        if (check) {
+                            System.out.println("XÓA THÀNH CÔNG");
+                        } else {
+                            System.out.println("KHÔNG TÌM THẤY BIỂN KIỂM SOÁT CẦN XÓA");
+                        }
+                        break;
+                    case 4:
+                        int trunkSearch = TrunkView.inputlicensePlate();
+                        ArrayList<Truck> trucks = trunkService.searchTrunk(trunkSearch);
+                        if (trucks.size() > 0) {
+                            for (Truck truck1 : trucks) {
+                                System.out.println(truck1);
+                            }
+                        } else {
+                            System.out.println("KHÔNG TÌM THẤY BIỂN KIỂM SOÁT CẦN XÓA");
+                        }
+                        break;
+                    case 5:
+                        int plateEdit = TrunkView.inputLicensePlateEDit();
+                        boolean checkPlate = trunkService.checkLicensePlate(plateEdit);
+                        if (checkPlate) {
+                            Truck truckedit = TrunkView.editTrunk();
+                            trunkService.edit(plateEdit, truckedit);
+                            System.out.println("CHỈNH SỬA THÀNH CÔNG");
+                        } else {
+                            System.out.println("KHÔNG TÌM THẤY BIỂN KIỂM SOÁT CẦN CHỈNH SỬA");
+                        }
+                        break;
+                    case 6:
+                        flag = false;
+                }
             }
         }
     }

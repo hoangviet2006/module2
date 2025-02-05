@@ -24,7 +24,7 @@ public class TrunkService implements ITruck {
     @Override
     public ArrayList<Truck> getTrunk() {
         for (int i = 0; i < trucks.size(); i++) {
-            if (trucks.get(i)!=null){
+            if (trucks.get(i) != null) {
                 Collections.sort(trucks);
                 System.out.println(trucks.get(i));
 
@@ -36,7 +36,7 @@ public class TrunkService implements ITruck {
     @Override
     public boolean deleteTrunk(int LicensePlate) {
         for (int i = 0; i < trucks.size(); i++) {
-            if (trucks.get(i).getLicensePlate()==LicensePlate){
+            if (trucks.get(i).getLicensePlate() == LicensePlate) {
                 trucks.remove(i);
                 return true;
             }
@@ -48,7 +48,7 @@ public class TrunkService implements ITruck {
     public ArrayList<Truck> searchTrunk(int LicensePlate) {
         ArrayList<Truck> newTrunk = new ArrayList<>();
         for (int i = 0; i < trucks.size(); i++) {
-            if (trucks.get(i).getLicensePlate()==LicensePlate){
+            if (trucks.get(i).getLicensePlate() == LicensePlate) {
                 newTrunk.add(trucks.get(i));
             }
         }
@@ -59,17 +59,17 @@ public class TrunkService implements ITruck {
     public boolean edit(int LicensePlate, Truck truck) {
 
         for (int i = 0; i < trucks.size(); i++) {
-            if (trucks.get(i).getLicensePlate()==LicensePlate){
-                trucks.set(i,truck);
+            if (trucks.get(i).getLicensePlate() == LicensePlate) {
+                trucks.set(i, truck);
                 return true;
             }
         }
         return false;
     }
 
-    public boolean checkLicensePlate(int plate){
+    public boolean checkLicensePlate(int plate) {
         for (int i = 0; i < trucks.size(); i++) {
-            if (trucks.get(i).getLicensePlate()==plate){
+            if (trucks.get(i).getLicensePlate() == plate) {
                 return true;
             }
         }

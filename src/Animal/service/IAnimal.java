@@ -3,14 +3,15 @@ package Animal.service;
 import Animal.model.Animal;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public interface IAnimal {
-    ArrayList<Animal> getAll();
+    List<Animal> getAll();
 
 
-    void addStudent(Animal animal);
+    void addAnimal(Animal animal);
 
     boolean deleteAnimal(String name);
 
-    ArrayList<Animal> search(String name);
+    List<Animal> search(String name);
 }
