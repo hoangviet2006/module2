@@ -35,13 +35,13 @@ public class Main {
             } else {
                 switch (count) {
                     case 1:
-                        motorbikeController.DisplayMotorbike();
+                        motorbikeController.displayMotorbike();
                         break;
                     case 2:
-                        otoController.DisplayOto();
+                        otoController.displayOto();
                         break;
                     case 3:
-                        trunkController.DisplayMotorbike();
+                        trunkController.displayTruck();
                         break;
                     case 4:
                         System.exit(0);

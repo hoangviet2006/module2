@@ -1,6 +1,6 @@
-package quan_ly_sach.service;
+package quan_ly_thu_vien.service;
 
-import quan_ly_sach.model.Book;
+import quan_ly_thu_vien.model.Book;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ public interface IBook {
 
     void addBook(Book book);
 
-    boolean editBook(String code,Book book);
+    boolean editBook(String code, Book book);
 
     boolean deleteBook(String code);
 

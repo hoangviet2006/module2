@@ -1,13 +1,13 @@
-package quan_ly_sach.service;
+package quan_ly_thu_vien.service;
 
-import quan_ly_sach.model.Book;
-import quan_ly_sach.util.ReadAndWriteFile;
+import quan_ly_thu_vien.model.Book;
+import quan_ly_thu_vien.util.ReadAndWriteFile;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class BookService implements IBook {
-    private final String BOOK_FILE = "D:\\codegym\\module2\\src\\quan_ly_sach\\data\\book.csv";
+    private final String BOOK_FILE = "D:\\codegym\\module2\\src\\quan_ly_thu_vien\\data\\book.csv";
     private final boolean APPEND = true;
     private final boolean NOT_APPEND = false;
 
@@ -28,7 +28,7 @@ public class BookService implements IBook {
     public void addBook(Book book) {
         List<String> stringList = new ArrayList<>();
         stringList.add(book.getInforToFile());
-        ReadAndWriteFile.writeFile(BOOK_FILE, stringList, APPEND);
+        ReadAndWriteFile.writeFile(BOOK_FILE,stringList, APPEND);
     }
 
     @Override
@@ -36,7 +36,7 @@ public class BookService implements IBook {
         List<Book> bookList = getBookAll();
         for (int i = 0; i < bookList.size(); i++) {
             if (code.equals(bookList.get(i).getCode())){
-                bookList.set(i,book);
+                bookList.set(  i,book);
                 break;
             }
         }

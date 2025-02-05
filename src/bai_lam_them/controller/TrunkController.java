@@ -11,7 +11,7 @@ public class TrunkController {
     public static Scanner scanner = new Scanner(System.in);
     static TrunkService trunkService = new TrunkService();
 
-    public static void DisplayMotorbike() {
+    public  void displayTruck() {
         boolean flag = true;
         while (flag) {
             System.out.println("---------Quản Lý trunk--------" +

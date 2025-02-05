@@ -1,7 +1,7 @@
-package quan_ly_sach.model;
+package quan_ly_thu_vien.model;
 
 public class Book {
-    private int stt;
+    private int id;
     private String code;
     private String name;
     private int price;
@@ -9,19 +9,19 @@ public class Book {
     public Book() {
     }
 
-    public Book(int stt, String code, String name, int price) {
-        this.stt = stt;
+    public Book(int id, String code, String name, int price) {
+        this.id = id;
         this.code = code;
         this.name = name;
         this.price = price;
     }
 
-    public int getStt() {
-        return stt;
+    public int getId() {
+        return id;
     }
 
-    public void setStt(int stt) {
-        this.stt = stt;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getCode() {
@@ -49,13 +49,13 @@ public class Book {
     }
 
     public String getInforToFile() {
-        return this.getStt() + "," + this.getCode() + "," + this.getName() + "," + this.getPrice();
+        return this.getId() + "," + this.getCode() + "," + this.getName() + "," + this.getPrice();
     }
 
     @Override
     public String toString() {
         return "Book{" +
-                "stt=" + stt +
+                "id=" + id +
                 ", code='" + code + '\'' +
                 ", name='" + name + '\'' +
                 ", price=" + price +

@@ -11,7 +11,7 @@ public class MotorbikeController {
     public static Scanner scanner = new Scanner(System.in);
     static MotorbikeService motorbikeService = new MotorbikeService();
 
-    public static void DisplayMotorbike() {
+    public static void displayMotorbike() {
         boolean flag = true;
         while (flag) {
             System.out.println("---------Quản Lý Motorbike--------" +

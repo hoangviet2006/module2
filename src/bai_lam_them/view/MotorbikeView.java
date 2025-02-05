@@ -9,7 +9,7 @@ public class MotorbikeView {
 
 
     public static Motorbike inputMotorbike() {
-        int licensePlate = 0;
+        int licensePlate;
         System.out.println("Nhập biển kiểm soát");
         while (true) {
             try {
@@ -24,7 +24,7 @@ public class MotorbikeView {
 
 
         System.out.println("Nhập hãng sản xuất");
-        String Manufacturer = "";
+        String Manufacturer;
         while (true) {
             try {
                 Manufacturer = scanner.nextLine();
@@ -36,7 +36,7 @@ public class MotorbikeView {
             }
         }
 
-        int YearOfManufacture = 0;
+        int YearOfManufacture;
         System.out.println("Nhập năm sản xuất");
         while (true) {
             try {
@@ -51,7 +51,7 @@ public class MotorbikeView {
 
 
         System.out.println("Nhập chủ sỡ hữu");
-        String Owner = "";
+        String Owner;
         while (true) {
             try {
                 Owner = scanner.nextLine();
@@ -64,7 +64,7 @@ public class MotorbikeView {
         }
 
 
-        int power = 0;
+        int power ;
         System.out.println("Nhập mã lực của xe");
         while (true) {
             try {
@@ -82,7 +82,7 @@ public class MotorbikeView {
     }
 
     public static int InputlicensePlate() {
-        int licensePlate = 0;
+        int licensePlate;
         System.out.println("Nhập biển kiểm soát");
         while (true) {
             try {
@@ -99,7 +99,7 @@ public class MotorbikeView {
 
 
     public static Motorbike editMotorbike() {
-        int licensePlate = 0;
+        int licensePlate;
         System.out.println("Nhập biển kiểm soát");
         while (true) {
             try {
@@ -114,7 +114,7 @@ public class MotorbikeView {
 
 
         System.out.println("Nhập hãng sản xuất");
-        String Manufacturer = "";
+        String Manufacturer;
         while (true) {
             try {
                 Manufacturer = scanner.nextLine();
@@ -128,7 +128,7 @@ public class MotorbikeView {
         }
 
 
-        int YearOfManufacture = 0;
+        int YearOfManufacture;
         System.out.println("Nhập năm sản xuất");
         while (true) {
             try {
@@ -143,7 +143,7 @@ public class MotorbikeView {
 
 
         System.out.println("Nhập chủ sỡ hữu");
-        String Owner = "";
+        String Owner;
         while (true) {
             try {
                 Owner = scanner.nextLine();
@@ -156,7 +156,7 @@ public class MotorbikeView {
         }
 
 
-        int power = 0;
+        int power;
         System.out.println("Nhập mã lực của xe");
         while (true) {
             try {

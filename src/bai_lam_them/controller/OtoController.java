@@ -11,7 +11,7 @@ public class OtoController {
     public static Scanner scanner = new Scanner(System.in);
     public static OtoService otoService = new OtoService();
 
-    public static void DisplayOto() {
+    public static void displayOto() {
         boolean flag = true;
         while (flag) {
             System.out.println("-------Quản Lý Oto-------" +
