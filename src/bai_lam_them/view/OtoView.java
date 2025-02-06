@@ -24,14 +24,12 @@ public class OtoView {
 
         System.out.println("Nhập hãng sản xuất");
         String Manufacturer ="";
-        while (true){
-            try {
-                Manufacturer = scanner.nextLine();
+        while (true) {
+            Manufacturer = scanner.nextLine().trim();
+            if (!Manufacturer.isEmpty() && Manufacturer.matches("^[A-ZÀ-Ỹ][a-zà-ỹ]+(\s[A-ZÀ-Ỹ][a-zà-ỹ]+)*$")) {
                 break;
-            }catch (IllegalArgumentException e){
-                System.out.println("Vui lòng nhập lại hãng sản xuất");
-            }catch (Exception e){
-                System.out.println("lỗi khác");
+            } else {
+                System.out.println("Lỗi không phải chữ, nhập lại: ");
             }
         }
 
@@ -50,14 +48,12 @@ public class OtoView {
 
         System.out.println("Nhập chủ sở hữu");
         String Owner ="";
-        while (true){
-            try {
-                Owner = scanner.nextLine();
+        while (true) {
+            Owner = scanner.nextLine().trim();
+            if (!Owner.isEmpty() && Owner.matches("^[A-ZÀ-Ỹ][a-zà-ỹ]+(\s[A-ZÀ-Ỹ][a-zà-ỹ]+)*$")) {
                 break;
-            }catch (IllegalArgumentException e){
-                System.out.println("Vui lòng nhập tên chủ sở hữu phù hợp");
-            }catch (Exception e){
-                System.out.println("lỗi khác");
+            } else {
+                System.out.println("Lỗi không phải chữ, nhập lại: ");
             }
         }
 
@@ -76,14 +72,12 @@ public class OtoView {
 
         System.out.println("Nhập kiểu xe");
         String VehicleType ="";
-        while (true){
-            try {
-                VehicleType = scanner.nextLine();
+        while (true) {
+            VehicleType = scanner.nextLine().trim();
+            if (!VehicleType.isEmpty() && VehicleType.matches("^[A-ZÀ-Ỹ][a-zà-ỹ]+(\s[A-ZÀ-Ỹ][a-zà-ỹ]+)*$")) {
                 break;
-            }catch (IllegalArgumentException e){
-                System.out.println("vui lòng nhập kiểu xe phù hợp(vd: xe dịch vụ)");
-            }catch (Exception e){
-                System.out.println("lỗi khác");
+            } else {
+                System.out.println("Lỗi không phải chữ, nhập lại: ");
             }
         }
 
@@ -121,20 +115,16 @@ public class OtoView {
             }
         }
 
-
         System.out.println("Nhập hãng sản xuất mới của xe: ");
         String Manufacturer ="";
-        while (true){
-            try {
-                Manufacturer = scanner.nextLine();
+        while (true) {
+            Manufacturer = scanner.nextLine().trim();
+            if (!Manufacturer.isEmpty() && Manufacturer.matches("^[A-ZÀ-Ỹ][a-zà-ỹ]+(\s[A-ZÀ-Ỹ][a-zà-ỹ]+)*$")) {
                 break;
-            }catch (IllegalArgumentException e){
-                System.out.println("Vui lòng nhập lại hãng sản xuất");
-            }catch (Exception e){
-                System.out.println("lỗi khác");
+            } else {
+                System.out.println("Lỗi không phải chữ, nhập lại: ");
             }
         }
-
 
         System.out.println("Nhập năm sản xuất mới của xe: ");
         int YearOfManufacture = 0;
@@ -152,14 +142,12 @@ public class OtoView {
 
         System.out.println("Nhập chủ sở hữu mới của xe: ");
         String Owner ="";
-        while (true){
-            try {
-                Owner = scanner.nextLine();
+        while (true) {
+            Owner = scanner.nextLine().trim();
+            if (!Owner.isEmpty() && Owner.matches("^[A-ZÀ-Ỹ][a-zà-ỹ]+(\s[A-ZÀ-Ỹ][a-zà-ỹ]+)*$")) {
                 break;
-            }catch (IllegalArgumentException e){
-                System.out.println("Vui lòng nhập tên chủ sở hữu phù hợp");
-            }catch (Exception e){
-                System.out.println("lỗi khác");
+            } else {
+                System.out.println("Lỗi không phải chữ, nhập lại: ");
             }
         }
 
@@ -178,14 +166,12 @@ public class OtoView {
         }
         System.out.println("Nhập kiểu xe mới của xe: ");
         String VehicleType ="";
-        while (true){
-            try {
-                VehicleType = scanner.nextLine();
+        while (true) {
+            VehicleType = scanner.nextLine().trim();
+            if (!VehicleType.isEmpty() && VehicleType.matches("^[A-ZÀ-Ỹ][a-zà-ỹ]+(\s[A-ZÀ-Ỹ][a-zà-ỹ]+)*$")) {
                 break;
-            }catch (IllegalArgumentException e){
-                System.out.println("vui lòng nhập kiểu xe phù hợp(vd: xe dịch vụ)");
-            }catch (Exception e){
-                System.out.println("lỗi khác");
+            } else {
+                System.out.println("Lỗi không phải chữ, nhập lại: ");
             }
         }
         Oto oto = new Oto(licensePlate, Manufacturer, YearOfManufacture, Owner, numberOfSeats, VehicleType);

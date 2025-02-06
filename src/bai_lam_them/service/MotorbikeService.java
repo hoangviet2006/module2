@@ -1,75 +1,88 @@
 package bai_lam_them.service;
 
 import bai_lam_them.model.Motorbike;
+import bai_lam_them.util.ReadAndWriteFile;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 public class MotorbikeService implements IMotorbike {
-    private static ArrayList<Motorbike> motorbikes = new ArrayList<>();
-
-    static {
-        motorbikes.add(new Motorbike(123, "yamaha", 2000, "Việt", 5000));
-        motorbikes.add(new Motorbike(456, "sirius", 1999, "Đạt", 2000));
-        motorbikes.add(new Motorbike(789, "honda", 1988, "Lưu", 3000));
-    }
+    private static final String MOTOBIKE_FILE = "D:\\codegym\\module2\\src\\bai_lam_them\\data\\motorbike.csv";
+    private static final boolean APPEND = true;
+    private static final boolean NOT_APPEND = false;
 
     @Override
     public void addMotorbike(Motorbike motorbike) {
-        motorbikes.add(motorbike);
+        List<String> stringList = new ArrayList<>();
+        stringList.add(motorbike.getInforToFile());
+        ReadAndWriteFile.writeFile(MOTOBIKE_FILE, stringList, APPEND);
     }
 
     @Override
-    public ArrayList<Motorbike> getMotorbike() {
-        for (int i = 0; i < motorbikes.size(); i++) {
-            if (motorbikes.get(i) != null) {
-                Collections.sort(motorbikes);
-                System.out.println(motorbikes.get(i));
-            }
+    public List<Motorbike> getMotorbike() {
+        List<Motorbike> stringList = new ArrayList<>();
+        List<String> strings = ReadAndWriteFile.readFile(MOTOBIKE_FILE);
+        String[] array;
+        for (int i = 0; i < strings.size(); i++) {
+            array = strings.get(i).split(",");
+            Motorbike motorbike = new Motorbike(Integer.parseInt(array[0]), array[1], Integer.parseInt(array[2]), array[3], Integer.parseInt(array[4]));
+            stringList.add(motorbike);
         }
-        return motorbikes;
+        return stringList;
     }
 
     @Override
     public boolean deleteMotorbike(int LicensePlate) {
+        List<Motorbike> motorbikes = getMotorbike();
+        boolean check = false;
         for (int i = 0; i < motorbikes.size(); i++) {
             if (motorbikes.get(i).getLicensePlate() == LicensePlate) {
+                check = true;
                 motorbikes.remove(i);
-                return true;
+                break;
             }
         }
-        return false;
+        if (check) {
+            List<String> list = new ArrayList<>();
+            for (Motorbike motorbike : motorbikes) {
+                list.add(motorbike.getInforToFile());
+            }
+            ReadAndWriteFile.writeFile(MOTOBIKE_FILE, list, NOT_APPEND);
+        }
+        return check;
+
     }
 
     @Override
-    public ArrayList<Motorbike> searchMotorbike(int LicensePlate) {
-        ArrayList<Motorbike> newMotorbike = new ArrayList<>();
+    public List<Motorbike> searchMotorbike(int LicensePlate) {
+        List<Motorbike> motorbikes = getMotorbike();
+        List<Motorbike> motorbikeList = new ArrayList<>();
         for (int i = 0; i < motorbikes.size(); i++) {
             if (motorbikes.get(i).getLicensePlate() == LicensePlate) {
-                newMotorbike.add(motorbikes.get(i));
+                motorbikeList.add(motorbikes.get(i));
+                break;
             }
         }
-        return newMotorbike;
+        return motorbikeList;
     }
 
     @Override
     public boolean edit(int LicensePlate, Motorbike motorbike) {
+        List<Motorbike> motorbikes = getMotorbike();
         for (int i = 0; i < motorbikes.size(); i++) {
-            if (motorbikes.get(i).getLicensePlate() == LicensePlate) {
-                motorbikes.set(i, motorbike);
+            if (motorbikes.get(i).getLicensePlate()==LicensePlate){
+                motorbikes.set(i,motorbike);
                 return true;
             }
         }
+        List<String> list = new ArrayList<>();
+        for (Motorbike motorbike1: motorbikes) {
+            list.add(motorbike1.getInforToFile());
+        }
+        ReadAndWriteFile.writeFile(MOTOBIKE_FILE,list,NOT_APPEND);
         return false;
     }
 
-    public boolean checkLicensePlate(int plate) {
-        for (int i = 0; i < motorbikes.size(); i++) {
-            if (motorbikes.get(i).getLicensePlate() == plate) {
-                return true;
-            }
-        }
-        return false;
-    }
 
 }

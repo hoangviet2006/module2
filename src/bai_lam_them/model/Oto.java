@@ -1,6 +1,6 @@
 package bai_lam_them.model;
 
-public class Oto extends Vehicle implements Comparable<Oto>{
+public class Oto extends Vehicle implements Comparable<Oto> {
 
     private int numberOfSeats;
     private String vehicleType;
@@ -9,7 +9,7 @@ public class Oto extends Vehicle implements Comparable<Oto>{
     }
 
     public Oto(int licensePlate, String manufacturer, int yearOfManufacture, String owner, int numberOfSeats, String vehicleType) {
-        super(licensePlate,manufacturer,yearOfManufacture,owner);
+        super(licensePlate, manufacturer, yearOfManufacture, owner);
         this.numberOfSeats = numberOfSeats;
         this.vehicleType = vehicleType;
     }
@@ -33,14 +33,18 @@ public class Oto extends Vehicle implements Comparable<Oto>{
 
     @Override
     public String toString() {
-        return " Oto{" + super.toString()+
+        return " Oto{" + super.toString() +
                 ", numberOfSeats= " + numberOfSeats +
                 ", VehicleType= " + vehicleType +
-                '}' +'\n';
+                '}' + '\n';
+    }
+
+    public String getInforToFile() {
+        return this.getLicensePlate() + "," + this.getManufacturer() + "," + this.getYearOfManufacture() + "," + this.getOwner() + "," + this.getNumberOfSeats() + "," + this.getVehicleType();
     }
 
     @Override
     public int compareTo(Oto o) {
-        return this.getNumberOfSeats()-o.getNumberOfSeats();
+        return this.getNumberOfSeats() - o.getNumberOfSeats();
     }
 }

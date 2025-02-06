@@ -29,6 +29,9 @@ public class Motorbike extends Vehicle implements Comparable<Motorbike>{
                 ", Power= " + power +
                 '}' +'\n';
     }
+    public String getInforToFile(){
+        return this.getLicensePlate() + "," + this.getManufacturer() + "," + this.getYearOfManufacture() + "," + this.getOwner() + "," +this.getPower();
+    }
 
     @Override
     public int compareTo(Motorbike o) {

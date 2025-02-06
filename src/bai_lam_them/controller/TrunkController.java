@@ -5,13 +5,14 @@ import bai_lam_them.service.TrunkService;
 import bai_lam_them.view.TrunkView;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class TrunkController {
     public static Scanner scanner = new Scanner(System.in);
     static TrunkService trunkService = new TrunkService();
 
-    public  void displayTruck() {
+    public void displayTruck() {
         boolean flag = true;
         while (flag) {
             System.out.println("---------Quản Lý trunk--------" +
@@ -38,41 +39,32 @@ public class TrunkController {
             } else {
                 switch (count) {
                     case 1:
-                        trunkService.getTrunk();
+                        List<Truck> truckList = trunkService.getTrunk();
+                        for (int i = 0; i < truckList.size(); i++) {
+                            System.out.println(truckList.get(i));
+                        }
                         break;
                     case 2:
-                        Truck truck = TrunkView.inputTrunk();
-                        trunkService.addTrunk(truck);
+                        trunkService.addTrunk(TrunkView.inputTrunk());
                         break;
                     case 3:
-                        int trunkDelete = TrunkView.inputlicensePlate();
-                        boolean check = trunkService.deleteTrunk(trunkDelete);
-                        if (check) {
-                            System.out.println("XÓA THÀNH CÔNG");
+                        boolean checkDelete = trunkService.deleteTrunk(TrunkView.inputlicensePlate());
+                        if (checkDelete) {
+                            System.out.println("Xóa thành công");
                         } else {
-                            System.out.println("KHÔNG TÌM THẤY BIỂN KIỂM SOÁT CẦN XÓA");
+                            System.out.println("Không tìm thấy licensePlate");
                         }
                         break;
                     case 4:
-                        int trunkSearch = TrunkView.inputlicensePlate();
-                        ArrayList<Truck> trucks = trunkService.searchTrunk(trunkSearch);
-                        if (trucks.size() > 0) {
-                            for (Truck truck1 : trucks) {
-                                System.out.println(truck1);
-                            }
-                        } else {
-                            System.out.println("KHÔNG TÌM THẤY BIỂN KIỂM SOÁT CẦN XÓA");
-                        }
+                        trunkService.searchTrunk(TrunkView.inputlicensePlate());
+                        trunkService.getTrunk();
                         break;
                     case 5:
-                        int plateEdit = TrunkView.inputLicensePlateEDit();
-                        boolean checkPlate = trunkService.checkLicensePlate(plateEdit);
-                        if (checkPlate) {
-                            Truck truckedit = TrunkView.editTrunk();
-                            trunkService.edit(plateEdit, truckedit);
-                            System.out.println("CHỈNH SỬA THÀNH CÔNG");
+                        boolean checkEdit = trunkService.edit(TrunkView.inputlicensePlate(), TrunkView.inputTrunk());
+                        if (checkEdit) {
+                            System.out.println("Chỉnh sửa thành công");
                         } else {
-                            System.out.println("KHÔNG TÌM THẤY BIỂN KIỂM SOÁT CẦN CHỈNH SỬA");
+                            System.out.println("Không tìm thấy licensePlate");
                         }
                         break;
                     case 6:

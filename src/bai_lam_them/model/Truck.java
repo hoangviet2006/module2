@@ -1,6 +1,6 @@
 package bai_lam_them.model;
 
-public class Truck extends Vehicle implements Comparable<Truck>{
+public class Truck extends Vehicle implements Comparable<Truck> {
 
     private int payload;
 
@@ -21,15 +21,19 @@ public class Truck extends Vehicle implements Comparable<Truck>{
         this.payload = payload;
     }
 
+    public String getInforToFile() {
+        return  this.getLicensePlate() + "," + this.getManufacturer() + "," + this.getYearOfManufacture() + "," + this.getOwner() + "," + this.getPayload();
+    }
+
     @Override
     public String toString() {
         return " Truck{" + super.toString() +
                 ", Payload= " + payload +
-                '}'+'\n';
+                '}' + '\n';
     }
 
     @Override
     public int compareTo(Truck o) {
-        return this.getPayload()-o.getPayload();
+        return this.getPayload() - o.getPayload();
     }
 }

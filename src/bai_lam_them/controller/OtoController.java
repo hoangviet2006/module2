@@ -5,6 +5,7 @@ import bai_lam_them.service.OtoService;
 import bai_lam_them.view.OtoView;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class OtoController {
@@ -38,43 +39,32 @@ public class OtoController {
             } else {
                 switch (count) {
                     case 1:
-                        otoService.getOto();
+                        List<Oto> list = otoService.getOto();
+                        for (int i = 0; i < list.size(); i++) {
+                            System.out.println(list.get(i));
+                        }
                         break;
                     case 2:
-                        Oto oto = OtoView.inputOto();
-                        otoService.addOto(oto);
+                        otoService.addOto(OtoView.inputOto());
                         break;
                     case 3:
-                        int otoDelete = OtoView.InputlicensePlate();
-                        boolean check = otoService.deleteOto(otoDelete);
-                        if (check) {
-                            System.out.println("XÓA THÀNH CÔNG");
+                        boolean checkDeleteOto = otoService.deleteOto(OtoView.InputlicensePlate());
+                        if (checkDeleteOto) {
+                            System.out.println("Xóa thành công");
                         } else {
-                            System.out.println("KHÔNG TÌM THẤY BIỂN KIỂM SOÁT CẦN XÓA");
+                            System.out.println("Không tìm thấy licensePlate");
                         }
-                        break;
                     case 4:
-                        int otoSearch = OtoView.InputlicensePlate();
-                        ArrayList<Oto> otoArrayList = otoService.searchOto(otoSearch);
-                        if (otoArrayList.size() > 0) {
-                            for (Oto oto1 : otoArrayList) {
-                                System.out.println(oto1);
-                            }
-                        } else {
-                            System.out.println("KHÔNG TÌM THẤY BIỂN KIỂM SOÁT CẦN XÓA");
-                        }
+                        otoService.searchOto(OtoView.InputlicensePlate());
+                        otoService.getOto();
                         break;
                     case 5:
-                        int licensePlateEdit = OtoView.inputLicensePlateEDit();
-                        boolean checkOto = otoService.checkLicensePlate(licensePlateEdit);
-                        if (checkOto) {
-                            Oto oto1 = OtoView.inputOtoEdit();
-                            otoService.editOto(licensePlateEdit, oto1);
-                            System.out.println("CHỈNH SỬA THÀNH CÔNG");
-                        } else {
-                            System.out.println("KHÔNG TÌM THẤY BIỂN KIỂM SOÁT CẦN CHỈNH SỬA");
+                        boolean checkEditOto = otoService.editOto(OtoView.InputlicensePlate(), OtoView.inputOto());
+                        if (checkEditOto) {
+                            System.out.println("Chỉnh sửa thành công");
+                        }else {
+                            System.out.println("Không tìm thấy licensePlate");
                         }
-                        break;
                     case 6:
                         flag = false;
                 }

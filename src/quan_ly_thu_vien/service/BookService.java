@@ -36,7 +36,7 @@ public class BookService implements IBook {
         List<Book> bookList = getBookAll();
         for (int i = 0; i < bookList.size(); i++) {
             if (code.equals(bookList.get(i).getCode())){
-                bookList.set(  i,book);
+                bookList.set(i,book);
                 break;
             }
         }

@@ -26,16 +26,13 @@ public class MotorbikeView {
         System.out.println("Nhập hãng sản xuất");
         String Manufacturer;
         while (true) {
-            try {
-                Manufacturer = scanner.nextLine();
+            Manufacturer = scanner.nextLine().trim();
+            if (!Manufacturer.isEmpty() && Manufacturer.matches("^[A-ZÀ-Ỹ][a-zà-ỹ]+(\s[A-ZÀ-Ỹ][a-zà-ỹ]+)*$")) {
                 break;
-            } catch (IllegalArgumentException e) {
-                System.out.println("Nhập lại hãng sản xuất");
-            } catch (Exception e) {
-                System.out.println("lỗi khác");
+            } else {
+                System.out.println("Lỗi không phải chữ, nhập lại: ");
             }
         }
-
         int YearOfManufacture;
         System.out.println("Nhập năm sản xuất");
         while (true) {
@@ -53,13 +50,11 @@ public class MotorbikeView {
         System.out.println("Nhập chủ sỡ hữu");
         String Owner;
         while (true) {
-            try {
-                Owner = scanner.nextLine();
+            Owner = scanner.nextLine().trim();
+            if (!Owner.isEmpty() && Owner.matches("^[A-ZÀ-Ỹ][a-zà-ỹ]+(\s[A-ZÀ-Ỹ][a-zà-ỹ]+)*$")) {
                 break;
-            } catch (IllegalArgumentException e) {
-                System.out.println("Nhập lại chủ sở hữu");
-            } catch (Exception e) {
-                System.out.println("lỗi khác");
+            } else {
+                System.out.println("Lỗi không phải chữ, nhập lại: ");
             }
         }
 
@@ -116,14 +111,11 @@ public class MotorbikeView {
         System.out.println("Nhập hãng sản xuất");
         String Manufacturer;
         while (true) {
-            try {
-                Manufacturer = scanner.nextLine();
-              break;
-            } catch (IllegalArgumentException e) {
-                System.out.println("Nhập lại hãng sản xuất");
-
-            } catch (Exception e) {
-                System.out.println("lỗi khác");
+            Manufacturer = scanner.nextLine().trim();
+            if (!Manufacturer.isEmpty() && Manufacturer.matches("^[A-ZÀ-Ỹ][a-zà-ỹ]+(\s[A-ZÀ-Ỹ][a-zà-ỹ]+)*$")) {
+                break;
+            } else {
+                System.out.println("Lỗi không phải chữ, nhập lại: ");
             }
         }
 
@@ -145,13 +137,11 @@ public class MotorbikeView {
         System.out.println("Nhập chủ sỡ hữu");
         String Owner;
         while (true) {
-            try {
-                Owner = scanner.nextLine();
+            Owner = scanner.nextLine().trim();
+            if (!Owner.isEmpty() && Owner.matches("^[A-ZÀ-Ỹ][a-zà-ỹ]+(\s[A-ZÀ-Ỹ][a-zà-ỹ]+)*$")) {
                 break;
-            } catch (IllegalArgumentException e) {
-                System.out.println("Nhập lại chủ sở hữu");
-            } catch (Exception e) {
-                System.out.println("lỗi khác");
+            } else {
+                System.out.println("Lỗi không phải chữ, nhập lại: ");
             }
         }
 

@@ -1,10 +1,12 @@
 package bai_lam_them.controller;
 
 import bai_lam_them.model.Motorbike;
+import bai_lam_them.model.Oto;
 import bai_lam_them.service.MotorbikeService;
 import bai_lam_them.view.MotorbikeView;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class MotorbikeController {
@@ -38,41 +40,37 @@ public class MotorbikeController {
             } else {
                 switch (count) {
                     case 1:
-                        motorbikeService.getMotorbike();
+                        List<Motorbike> motorbikes = motorbikeService.getMotorbike();
+                        for (int i = 0; i < motorbikes.size(); i++) {
+                            System.out.println(motorbikes.get(i));
+                        }
                         break;
                     case 2:
                         Motorbike motorbike = MotorbikeView.inputMotorbike();
                         motorbikeService.addMotorbike(motorbike);
                         break;
                     case 3:
-                        int motoDelete = MotorbikeView.InputlicensePlate();
-                        boolean check = motorbikeService.deleteMotorbike(motoDelete);
-                        if (check) {
-                            System.out.println("XÓA THÀNH CÔNG");
+                        int licensePlate = MotorbikeView.InputlicensePlate();
+                        boolean checkMotorbike = motorbikeService.deleteMotorbike(licensePlate);
+                        if (checkMotorbike) {
+                            System.out.println("Xóa Thành Công");
                         } else {
-                            System.out.println("KHÔNG TÌM THẤY BIỂN KIỂM SOÁT CẦN XÓA");
+                            System.out.println("Không tìm thấy licensePlate");
                         }
                         break;
                     case 4:
-                        int motoSearch = MotorbikeView.InputlicensePlate();
-                        ArrayList<Motorbike> motorbikes = motorbikeService.searchMotorbike(motoSearch);
-                        if (motorbikes.size() > 0) {
-                            for (Motorbike motorbike1 : motorbikes) {
-                                System.out.println(motorbike1);
-                            }
-                        } else {
-                            System.out.println("KHÔNG TÌM THẤY BIỂN KIỂM SOÁT CẦN XÓA");
-                        }
+                        int licensePlateSearch = MotorbikeView.InputlicensePlate();
+                        motorbikeService.searchMotorbike(licensePlateSearch);
+                        motorbikeService.getMotorbike();
                         break;
                     case 5:
                         int licensePlateEdit = MotorbikeView.InputlicensePlate();
-                        boolean checkMotorbike = motorbikeService.checkLicensePlate(licensePlateEdit);
-                        if (checkMotorbike) {
-                            Motorbike motorbikeEdit = MotorbikeView.editMotorbike();
-                            motorbikeService.edit(licensePlateEdit, motorbikeEdit);
-                            System.out.println("CHỈNH SỬA THÀNH CÔNG");
+                        Motorbike motorbike1 = new Motorbike();
+                        boolean checkMotorbikeEdit = motorbikeService.edit(licensePlateEdit, motorbike1);
+                        if (checkMotorbikeEdit) {
+                            System.out.println("Chỉnh sửa thành công");
                         } else {
-                            System.out.println("KHÔNG TÌM THẤY BIỂN KIỂM SOÁT CẦN CHỈNH SỬA");
+                            System.out.println("Không tìm thấy licensePlate");
                         }
                         break;
                     case 6:
