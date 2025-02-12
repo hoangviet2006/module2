@@ -70,11 +70,11 @@ public class BookService implements IBook {
     }
 
     @Override
-    public List<Book> searchBook(String code) {
+    public List<Book> searchBook(String nameBook) {
         List<Book> bookList = new ArrayList<>();
         List<Book> list = getBookAll();
         for (int i = 0; i < list.size(); i++) {
-            if (list.get(i).getCode().contains(code)){
+            if (list.get(i).getName().contains(nameBook)){
                 bookList.add(list.get(i));
             }
         }

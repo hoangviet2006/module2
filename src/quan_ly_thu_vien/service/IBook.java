@@ -13,6 +13,6 @@ public interface IBook {
 
     boolean deleteBook(String code);
 
-    List<Book> searchBook(String code);
+    List<Book> searchBook(String nameBook);
 
 }

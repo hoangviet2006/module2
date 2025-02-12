@@ -51,18 +51,18 @@ public class BookView {
         Book book = new Book(id,code,name,price);
         return book;
     }
-    public static String inputCode(){
-        System.out.println("Nhập mã sách");
-        String code;
+    public static String inputNameBook(){
+        System.out.println("Nhập tên  sách");
+        String nameBook;
         while (true){
             try {
-                code = scanner.nextLine();
+                nameBook = scanner.nextLine();
                 break;
             }catch (NumberFormatException numberFormatException){
                 System.out.println("Lỗi không phải là chữ");
             }
         }
-        return code;
+        return nameBook;
     }
 
 }

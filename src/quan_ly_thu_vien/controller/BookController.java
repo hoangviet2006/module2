@@ -43,7 +43,7 @@ public class BookController {
                     bookService.addBook(book);
                     break;
                 case 3:
-                    String inputCode = BookView.inputCode();
+                    String inputCode = BookView.inputNameBook();
                     Book book1 = BookView.inputBook();
                     boolean checkEdit = bookService.editBook(inputCode, book1);
                     if (checkEdit) {
@@ -53,7 +53,7 @@ public class BookController {
                     }
                     break;
                 case 4:
-                    String inputCodeDelete = BookView.inputCode();
+                    String inputCodeDelete = BookView.inputNameBook();
                     boolean checkDelete = bookService.deleteBook(inputCodeDelete);
                     if (checkDelete) {
                         System.out.println("Xóa thành công");
@@ -62,7 +62,7 @@ public class BookController {
                     }
                     break;
                 case 5:
-                    String inputCodeSearch = BookView.inputCode();
+                    String inputCodeSearch = BookView.inputNameBook();
                     List<Book> bookList1 = bookService.searchBook(inputCodeSearch);
                     for (int i = 0; i < bookList1.size(); i++) {
                         System.out.println(bookList1.get(i));
