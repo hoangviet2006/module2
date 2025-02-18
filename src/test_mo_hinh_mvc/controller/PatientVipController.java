@@ -41,7 +41,6 @@ public class PatientVipController {
             switch (choose) {
                 case 1:
                     List<PatientVIP> list = patientVipService.getPatientVip();
-//
                     for (int i = 0; i < list.size(); i++) {
                         System.out.println(list.get(i));
                         System.out.println("---------------------");

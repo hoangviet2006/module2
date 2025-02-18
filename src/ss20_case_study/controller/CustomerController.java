@@ -43,7 +43,7 @@ public class CustomerController {
                             if (check) {
                                 System.out.println("Chỉnh sửa thành công");
                                 customerService.getCustomer();
-                            }   
+                            }
                         }
                     }
                     if (!checkName){
