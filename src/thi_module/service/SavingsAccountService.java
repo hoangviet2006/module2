@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SavingsAccountService implements ISavingsAccountService{
-    private final String PAYMENT_FILE = "D:\\codegym\\module2\\src\\thi_module\\data\\bankaccount.csv";
+    private final String PAYMENT_FILE = "src/thi_module/data/bankaccount.csv";
     private final boolean APPEND = true;
     private final boolean NOT_APPEND = false;
     @Override

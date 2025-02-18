@@ -28,7 +28,7 @@ public class SavingAccountView {
         while (true) {
             try {
                 name = scanner.nextLine();
-                if (name.matches("^[A-Z][a-z]")) {
+                if (name.matches("^[A-Z][a-z]*(?: [A-Z][a-z]*)*$")) {
                     break;
                 }else {
                     System.out.println("Tên phải bắt đầu bằng chữ hoa");
@@ -86,7 +86,7 @@ public class SavingAccountView {
         while (true){
             try {
                 term= scanner.nextLine();
-                if (term.matches("^\\d+(\\.\\d+)?%$\n")){
+                if (term.matches("^\\d+(\\.\\d+)?%$")){
                     break;
                 }else {
                     System.out.println("Lỗi không đúng định dạng lãi xuất phải có %");
